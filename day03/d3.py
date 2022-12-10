@@ -33,6 +33,13 @@ for line in lines:
             sum += chars.get(i)
             break
 
+for line in lines:
+    half1 = slice(0, len(line)//2)
+    half2 = slice(len(line)//2, len(line))
+    if any(map(lambda x: x in line[half2], line[half1])):
+        sum += 1
+
+
 print("Item from one rucksack")
 print(sum)
 
